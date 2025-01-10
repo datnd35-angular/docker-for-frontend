@@ -88,5 +88,5 @@ RUN npm install
 
 ## Ứng dụng 
 - Khi chúng ta muốn xây dựng một hệ thống `Micro FE` thì sẽ có nhiều `Responsitory`. Để đơn giải quá lại chúng ta có thể sử dụng `docker`. Để `build` chúng thành nhiều `container`, sau đó đẩy những container này lên `VM` là xong.
-- Vậy trường hợp nếu chúng ta cập nhật 1 `container`` thì sao, nó sẽ sinh ra `downtime` và khi đó chúng ta cần đến `kubernetes` giải quyết vấn đền này.
+- Vậy trường hợp nếu chúng ta cập nhật 1 `container` thì sao, nó sẽ sinh ra `downtime` và khi đó chúng ta cần đến `kubernetes` giải quyết vấn đền này.
 
