@@ -1,4 +1,4 @@
-## vì sao lại cần docker?
+## Vì sao lại cần docker?
 
 **Truyền thống** khi `deploy` một `application` lên `Host` `(folder hay được gọi là một máy chủ vật lý)` và `Host` này củng có thể share để deploy nhiều application khác nhau, dẫn đến khi có một ứng dụng bị lỗi thì có thể dẫn đến tất cả các `applications` còn lại trong Host đó cũng sẽ lỗi.
 
