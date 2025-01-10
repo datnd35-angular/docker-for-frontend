@@ -86,5 +86,7 @@ RUN npm install
 -  Là một phiên bản đang chạy của Docker Image. Có thể có nhiều Container từ một Docker Image.
 -  Docker Container hoạt động độc lập nên đảm bảo không ảnh hưởng đến Container khác, giúp tránh xung đột cho ứng dụng. Nó có thể dùng 1 máy, chia sẻ kernel và giả lập môi trường để chạy process độc lập. Điều này làm cho container cực kì nhẹ, không chiếm nhiều tài nguyên của máy.
 
-
+## Ứng dụng 
+- Khi chúng ta muốn xây dựng một hệ thống `Micro FE` thì sẽ có nhiều `Responsitory`. Để đơn giải quá lại chúng ta có thể sử dụng `docker`. Để `build` chúng thành nhiều `container`, sau đó đẩy những container này lên `VM` là xong.
+- Vậy trường hợp nếu chúng ta cập nhật 1 `container`` thì sao, nó sẽ sinh ra `downtime` và khi đó chúng ta cần đến `kubernetes` giải quyết vấn đền này.
 
