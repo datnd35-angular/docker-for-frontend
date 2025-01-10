@@ -39,7 +39,7 @@ RUN npm install
 ....
 ```
 - ở đây `FROM node:16 AS build` là kéo `image Node.js phiên bản 16 từ Docker Hub`. Nó sẽ giúp tạo môi trường khi `build` ứng dụng Angular nhưng nó sẽ không nằm trong `Image` cuối cùng.
-- Những cái Image chúng ra kéo về từ `Docker Hub` chỉ để tạo môi trường hoặc chúng ứng dụng trong giai đoạn `build` chứ nó không nằm ở `mage cuối`. Nói chung `Image không nằm trong Image`.
+- Những cái Image chúng ra kéo về từ `Docker Hub` chỉ để tạo môi trường hoặc chúng ứng dụng trong giai đoạn `build` chứ nó không nằm ở `Image cuối`. Nói chung `Image không nằm trong Image`.
 
 
 ## Docker image
