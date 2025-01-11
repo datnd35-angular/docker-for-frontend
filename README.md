@@ -90,23 +90,23 @@ RUN npm install
 
 - Container là một đơn vị phần mềm tiêu chuẩn hóa (tương tự virtual machines), bao gồm tất cả các yếu tố cần thiết để chạy ứng dụng: mã nguồn, thư viện, các phần phụ thuộc, tệp cấu hình và bất kỳ tài nguyên cần thiết nào.
  
-**Cách thức hoạt động:**
-1. **Khi container được khởi động**:
-   - Docker sẽ tạo và bắt đầu **container** theo cấu hình mà bạn đã chỉ định, bao gồm cả việc khởi chạy ứng dụng Angular bên trong container.
-   - Nếu bạn sử dụng Docker để chạy ứng dụng Angular, thường bạn sẽ có một Dockerfile chứa các lệnh để **build** và **chạy** ứng dụng khi container được khởi tạo. Ví dụ, nếu bạn sử dụng `ng serve`, nó sẽ bắt đầu chạy ứng dụng Angular ngay khi container khởi động.
-
-2. **Khi bạn trỏ đến port (ví dụ `http://localhost:4200`)**:
-   - Trình duyệt của bạn sẽ gửi một yêu cầu đến **port 4200 trên host**.
-   - Docker sẽ chuyển tiếp yêu cầu đó đến **port 80 trong container**, nơi ứng dụng Angular của bạn đang chạy.
-   - Tuy nhiên, **ứng dụng Angular đã chạy từ trước khi yêu cầu đến**, tức là ứng dụng đã ở trong trạng thái **runtime** từ khi container bắt đầu.
-
-**Quá trình thực tế:**
-- **Chạy ứng dụng trong Docker container**: 
-   - Docker sử dụng một Docker image chứa ứng dụng Angular đã được build và được cấu hình để khởi chạy ứng dụng khi container khởi động.
-   - Docker image có thể bao gồm lệnh như `ng serve`, hoặc một server HTTP như Nginx để phục vụ ứng dụng Angular. Ứng dụng này bắt đầu **ngay khi container khởi động**.
+   **Cách thức hoạt động:**
+   1. **Khi container được khởi động**:
+      - Docker sẽ tạo và bắt đầu **container** theo cấu hình mà bạn đã chỉ định, bao gồm cả việc khởi chạy ứng dụng Angular bên trong container.
+      - Nếu bạn sử dụng Docker để chạy ứng dụng Angular, thường bạn sẽ có một Dockerfile chứa các lệnh để **build** và **chạy** ứng dụng khi container được khởi tạo. Ví dụ, nếu bạn sử dụng `ng serve`, nó sẽ bắt đầu chạy ứng dụng Angular ngay khi container khởi động.
    
-- **Truy cập ứng dụng qua port**:
-   - Khi bạn trỏ đến port (ví dụ `http://localhost:4200`), ứng dụng Angular **đã được chạy trước đó**. Docker chỉ chịu trách nhiệm chuyển tiếp yêu cầu đến ứng dụng đang chạy trong container.
+   2. **Khi bạn trỏ đến port (ví dụ `http://localhost:4200`)**:
+      - Trình duyệt của bạn sẽ gửi một yêu cầu đến **port 4200 trên host**.
+      - Docker sẽ chuyển tiếp yêu cầu đó đến **port 80 trong container**, nơi ứng dụng Angular của bạn đang chạy.
+      - Tuy nhiên, **ứng dụng Angular đã chạy từ trước khi yêu cầu đến**, tức là ứng dụng đã ở trong trạng thái **runtime** từ khi container bắt đầu.
+   
+   **Quá trình thực tế:**
+   - **Chạy ứng dụng trong Docker container**: 
+      - Docker sử dụng một Docker image chứa ứng dụng Angular đã được build và được cấu hình để khởi chạy ứng dụng khi container khởi động.
+      - Docker image có thể bao gồm lệnh như `ng serve`, hoặc một server HTTP như Nginx để phục vụ ứng dụng Angular. Ứng dụng này bắt đầu **ngay khi container khởi động**.
+      
+   - **Truy cập ứng dụng qua port**:
+      - Khi bạn trỏ đến port (ví dụ `http://localhost:4200`), ứng dụng Angular **đã được chạy trước đó**. Docker chỉ chịu trách nhiệm chuyển tiếp yêu cầu đến ứng dụng đang chạy trong container.
 
 ## Ứng dụng 
 - Khi chúng ta muốn xây dựng một hệ thống `Micro FE` thì sẽ có nhiều `Responsitory`. Để đơn giải quá lại chúng ta có thể sử dụng `docker`. Để `build` chúng thành nhiều `container`, sau đó đẩy những container này lên `VM` là xong.
